@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Lightbulb } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IMAGES } from "@/lib/images";
@@ -75,19 +75,16 @@ export function ServicesSection() {
             </div>
           </article>
 
-          {/* Verejné osvetlenie — horizontal editorial band
-              (lighting photo not yet on disk; restrained tonal panel) */}
+          {/* Verejné osvetlenie — horizontal editorial band */}
           <article className="group overflow-hidden rounded-xl border border-line-soft bg-surface shadow-[0_1px_0_rgba(26,31,28,0.03)] lg:col-span-8">
             <div className="grid h-full sm:grid-cols-[minmax(9rem,0.38fr)_1fr]">
-              <div
-                className="relative flex min-h-[9rem] items-end bg-[linear-gradient(160deg,#2a5f6a_0%,#3d6a58_55%,#2f6b4f_100%)] p-5 sm:min-h-full"
-                aria-hidden
-              >
-                <Lightbulb
-                  className="h-10 w-10 text-white/35 transition-transform duration-500 group-hover:scale-105 sm:h-12 sm:w-12"
-                  strokeWidth={1.25}
-                />
-              </div>
+              <SiteImage
+                src={IMAGES.verejneOsvetlenie.src}
+                alt={IMAGES.verejneOsvetlenie.alt}
+                objectPosition="center 22%"
+                sizes="(max-width: 640px) 100vw, 28vw"
+                frameClassName="min-h-[9rem] w-full sm:h-full sm:min-h-full"
+              />
               <div className="flex flex-col justify-center gap-5 p-6 md:p-8 lg:px-9">
                 <div>
                   <p className="section-eyebrow">Technika a komunikácie</p>

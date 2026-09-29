@@ -23,6 +23,10 @@ export const IMAGES = {
     src: "/images/verejna-zelen.jpg",
     alt: "Pracovník Technických služieb pri údržbe verejnej zelene",
   },
+  verejneOsvetlenie: {
+    src: "/images/verejne-osvetlenie.jpg",
+    alt: "Pracovník Technických služieb pri údržbe verejného osvetlenia z vysokozdvižnej plošiny",
+  },
   zbernyDvor: {
     src: "/images/zberny-dvor.jpg",
     alt: "Zberný dvor Technických služieb Mesta Svit",
