@@ -12,11 +12,11 @@ export const IMAGES = {
     alt: "Letecký pohľad na mesto Svit v údolí pod Tatrami",
   },
   odpadPrimary: {
-    src: "/images/odpad-truck-primary.jpg",
+    src: "/images/odpad-truck-feature.jpg",
     alt: "Zber komunálneho odpadu Technickými službami Mesta Svit",
   },
   odpadFeature: {
-    src: "/images/odpad-truck-feature.jpg",
+    src: "/images/odpad-truck-primary.jpg",
     alt: "Zber komunálneho odpadu Technickými službami Mesta Svit",
   },
   odpadSecondary: {
