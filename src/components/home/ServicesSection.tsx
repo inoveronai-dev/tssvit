@@ -35,8 +35,8 @@ const SERVICES = [
     description:
       "Pohrebné služby a komplexná starostlivosť spojená so správou mestského pohrebiska.",
     href: ROUTES.pohrebneSluzby,
-    image: null,
-    objectPosition: undefined,
+    image: IMAGES.pohrebneSluzby,
+    objectPosition: "center 45%",
   },
 ] as const;
 
@@ -58,20 +58,13 @@ export function ServicesSection() {
           {SERVICES.map((service) => (
             <li key={service.title}>
               <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-line-soft bg-surface">
-                {service.image ? (
-                  <SiteImage
-                    src={service.image.src}
-                    alt={service.image.alt}
-                    objectPosition={service.objectPosition}
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    frameClassName="aspect-[16/10] w-full"
-                  />
-                ) : (
-                  <div
-                    className="aspect-[16/10] w-full bg-[linear-gradient(160deg,#e4e8e3_0%,#d5dbd4_55%,#c8d0c6_100%)]"
-                    aria-hidden
-                  />
-                )}
+                <SiteImage
+                  src={service.image.src}
+                  alt={service.image.alt}
+                  objectPosition={service.objectPosition}
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  frameClassName="aspect-[16/10] w-full"
+                />
 
                 <div className="flex flex-1 flex-col p-6 md:p-7">
                   <h3 className="text-xl font-bold tracking-tight text-ink md:text-[1.35rem]">

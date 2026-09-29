@@ -31,4 +31,8 @@ export const IMAGES = {
     src: "/images/zberny-dvor.jpg",
     alt: "Zberný dvor Technických služieb Mesta Svit",
   },
+  pohrebneSluzby: {
+    src: "/images/pohrebne-sluzby.jpg",
+    alt: "Mestský cintorín v Svite",
+  },
 } as const;

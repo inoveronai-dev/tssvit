@@ -27,22 +27,12 @@ export function WasteFeatureSection() {
         <div className="grid items-stretch gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16 xl:gap-20">
           <div className="group relative min-h-[22rem]">
             <SiteImage
-              src={IMAGES.odpadPrimary.src}
-              alt={IMAGES.odpadPrimary.alt}
-              objectPosition="center 32%"
+              src={IMAGES.odpadSecondary.src}
+              alt={IMAGES.odpadSecondary.alt}
+              objectPosition="center 18%"
               sizes="(max-width: 1024px) 100vw, 58vw"
               frameClassName="aspect-[4/5] w-full rounded-xl border border-line-soft sm:aspect-[5/4] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full lg:min-h-[34rem]"
             />
-            <div className="absolute bottom-4 right-4 hidden w-[36%] overflow-hidden rounded-lg border border-white/80 shadow-[0_12px_32px_-18px_rgba(26,31,28,0.45)] sm:block lg:bottom-6 lg:right-6">
-              <SiteImage
-                src={IMAGES.odpadSecondary.src}
-                alt={IMAGES.odpadSecondary.alt}
-                objectPosition="center 18%"
-                sizes="240px"
-                zoom={false}
-                frameClassName="aspect-[4/3] w-full"
-              />
-            </div>
           </div>
 
           <div className="flex flex-col justify-center py-1 lg:py-4">
