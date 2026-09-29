@@ -15,6 +15,10 @@ export const IMAGES = {
     src: "/images/odpad-truck-primary.jpg",
     alt: "Zber komunálneho odpadu Technickými službami Mesta Svit",
   },
+  odpadFeature: {
+    src: "/images/odpad-truck-feature.jpg",
+    alt: "Zber komunálneho odpadu Technickými službami Mesta Svit",
+  },
   odpadSecondary: {
     src: "/images/odpad-truck-secondary.jpg",
     alt: "Pracovníci pri zbere odpadu na obytnej ulici v Svite",
