@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactForm } from "@/components/kontakt/ContactForm";
 import { SubpageShell } from "@/components/shells/SubpageShell";
 import { PHONES } from "@/lib/routes";
 
@@ -12,10 +13,10 @@ export default function KontaktPage() {
       title="Kontakt"
       description="Kontaktné informácie Technických služieb Mesta Svit."
     >
-      <div className="space-y-6">
-        <div className="rounded-lg border border-line bg-surface p-6">
+      <div className="mx-auto max-w-3xl space-y-8">
+        <div className="rounded-lg border border-line bg-surface p-6 md:p-8">
           <h2 className="text-xl font-bold text-ink">Telefónne kontakty</h2>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-4 space-y-3 text-base">
             <li>
               Prvý kontakt:{" "}
               <a
@@ -37,16 +38,7 @@ export default function KontaktPage() {
           </ul>
         </div>
 
-        <div
-          id="formular"
-          className="scroll-mt-28 rounded-lg border border-dashed border-line bg-surface p-6"
-        >
-          <h2 className="text-xl font-bold text-ink">Kontaktný formulár</h2>
-          <p className="mt-2 text-muted">
-            Online formulár bude doplnený. Zatiaľ nás kontaktujte telefonicky.
-            Obsah sa pripravuje.
-          </p>
-        </div>
+        <ContactForm />
       </div>
     </SubpageShell>
   );
