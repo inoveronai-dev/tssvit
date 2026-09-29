@@ -46,8 +46,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Desktop: cinematic hero — layout unchanged */}
-      <div className="relative hidden min-h-[30rem] overflow-hidden md:block lg:min-h-[34rem] xl:min-h-[36rem]">
+      {/* Desktop: immersive civic hero */}
+      <div className="relative hidden min-h-[78vh] overflow-hidden md:block lg:min-h-[82vh]">
         <SiteImage
           src={IMAGES.heroSvit.src}
           alt={IMAGES.heroSvit.alt}
@@ -59,31 +59,31 @@ export function HeroSection() {
           frameClassName="absolute inset-0 z-0 h-full w-full"
         />
         <div
-          className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(10,20,16,0.78)_0%,rgba(10,20,16,0.60)_28%,rgba(10,20,16,0.25)_48%,rgba(10,20,16,0)_70%)]"
+          className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(8,16,13,0.82)_0%,rgba(8,16,13,0.68)_24%,rgba(8,16,13,0.36)_42%,rgba(8,16,13,0.12)_58%,rgba(8,16,13,0)_72%)]"
           aria-hidden
         />
-        <div className="relative z-20 container-site flex min-h-[30rem] items-center py-16 lg:min-h-[34rem] lg:py-20 xl:min-h-[36rem]">
-          <div className="max-w-[30rem] text-white lg:max-w-[34rem]">
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
+        <div className="relative z-20 container-site flex min-h-[78vh] items-end pb-16 pt-28 lg:min-h-[82vh] lg:pb-20 lg:pt-32 xl:pb-24">
+          <div className="max-w-[32rem] text-white lg:max-w-[36rem]">
+            <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white/95 drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
               Technické služby Mesta Svit
             </p>
-            <h1 className="mt-5 max-w-[16ch] text-[2.35rem] font-bold leading-[1.12] tracking-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] lg:text-[2.85rem] lg:leading-[1.1]">
+            <h1 className="mt-7 max-w-[15ch] text-[2.65rem] font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_1px_12px_rgba(0,0,0,0.35)] lg:mt-8 lg:text-[3.15rem] lg:leading-[1.08] xl:text-[3.35rem]">
               Každodenné služby pre fungujúce mesto.
             </h1>
-            <p className="mt-5 max-w-[28rem] text-[1.05rem] leading-relaxed text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)] lg:text-[1.1rem]">
+            <p className="mt-7 max-w-[30rem] text-[1.08rem] leading-[1.75] text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)] lg:mt-8 lg:text-[1.125rem] lg:leading-[1.8]">
               Odpadové hospodárstvo, starostlivosť o verejnú zeleň, komunikácie,
               verejné osvetlenie a ďalšie služby pre obyvateľov mesta Svit.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3.5">
+            <div className="mt-11 flex flex-wrap gap-4 lg:mt-12">
               <ButtonLink
                 href="/#sluzby"
-                className="min-h-12 px-7 text-[1.05rem]"
+                className="min-h-[3.25rem] px-8 text-[1.0625rem] tracking-wide"
               >
                 Naše služby
               </ButtonLink>
               <a
                 href={ROUTES.kontakt}
-                className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-white/85 bg-white/18 px-7 text-[1.05rem] font-semibold text-white shadow-[0_1px_8px_rgba(0,0,0,0.2)] transition-colors hover:border-white hover:bg-white/28"
+                className="inline-flex min-h-[3.25rem] items-center justify-center rounded-lg border-2 border-white/90 bg-white/16 px-8 text-[1.0625rem] font-semibold tracking-wide text-white shadow-[0_1px_10px_rgba(0,0,0,0.22)] transition-colors hover:border-white hover:bg-white/28"
               >
                 Kontaktovať nás
               </a>
