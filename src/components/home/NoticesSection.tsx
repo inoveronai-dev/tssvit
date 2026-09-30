@@ -1,50 +1,72 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { NOTICES } from "@/lib/content/notices";
-import { ROUTES } from "@/lib/routes";
+
+function NoticeItems({ ariaHidden = false }: { ariaHidden?: boolean }) {
+  return (
+    <>
+      {NOTICES.map((notice) => (
+        <li
+          key={`${ariaHidden ? "dup-" : ""}${notice.title}`}
+          className="flex shrink-0 items-center"
+          aria-hidden={ariaHidden || undefined}
+        >
+          <Link
+            href={notice.href}
+            tabIndex={ariaHidden ? -1 : undefined}
+            className="group inline-flex items-center gap-2 whitespace-nowrap px-1 py-1 text-[0.95rem] font-semibold text-ink transition-colors hover:text-accent focus-visible:text-accent sm:text-base"
+          >
+            <span>{notice.title}</span>
+            <span
+              className="shrink-0 text-accent transition-transform duration-200 group-hover:translate-x-0.5"
+              aria-hidden
+            >
+              →
+            </span>
+          </Link>
+          <span
+            className="mx-4 shrink-0 text-[0.65rem] text-muted/55 sm:mx-5"
+            aria-hidden
+          >
+            •
+          </span>
+        </li>
+      ))}
+    </>
+  );
+}
 
 export function NoticesSection() {
   return (
     <section
-      className="bg-surface py-16 md:py-20"
+      className="border-y border-line bg-surface"
       aria-labelledby="notices-heading"
     >
-      <div className="container-site">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading id="notices-heading" title="Aktuálne oznamy" />
-          <Link
-            href={ROUTES.oznamy}
-            className="group inline-flex min-h-11 items-center gap-2 text-base font-semibold text-accent transition-colors hover:text-accent-hover"
+      <div className="flex min-h-12 items-stretch md:min-h-14">
+        <div className="flex shrink-0 items-center border-r border-line bg-surface px-4 sm:px-5 md:px-6">
+          <p
+            id="notices-heading"
+            className="whitespace-nowrap text-[0.68rem] font-bold uppercase tracking-[0.14em] text-accent sm:text-[0.72rem]"
           >
-            Všetky oznamy
-            <ArrowRight className="link-arrow h-4 w-4" aria-hidden />
-          </Link>
+            Aktuálne oznamy
+          </p>
         </div>
 
-        <ul className="mt-9 border-t border-line">
-          {NOTICES.map((notice) => (
-            <li key={notice.title} className="border-b border-line-soft">
-              <Link
-                href={notice.href}
-                className="group flex items-center justify-between gap-5 py-6 transition-colors hover:bg-paper-warm/80 sm:py-7"
-              >
-                <span className="min-w-0">
-                  <span className="block text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted/80">
-                    Oznam
-                  </span>
-                  <span className="mt-1.5 block text-base font-semibold leading-snug text-ink sm:text-lg">
-                    {notice.title}
-                  </span>
-                </span>
-                <ArrowRight
-                  className="link-arrow h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-accent"
-                  aria-hidden
-                />
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="notices-ticker-viewport relative min-w-0 flex-1 overflow-hidden">
+          {/* Auto-scrolling marquee — desktop / motion-ok */}
+          <div className="notices-ticker-animated absolute inset-0 hidden items-center md:flex">
+            <ul className="notices-ticker-marquee flex w-max items-center pl-5">
+              <NoticeItems />
+              <NoticeItems ariaHidden />
+            </ul>
+          </div>
+
+          {/* Static swipeable list — mobile + reduced motion */}
+          <div className="notices-ticker-static flex h-full items-center overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
+            <ul className="flex w-max items-center px-4 py-3 sm:px-5">
+              <NoticeItems />
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

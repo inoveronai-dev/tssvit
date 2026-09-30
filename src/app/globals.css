@@ -160,3 +160,36 @@ body {
     transform: none;
   }
 }
+
+@keyframes notices-ticker-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.notices-ticker-marquee {
+  animation: notices-ticker-scroll 34s linear infinite;
+  will-change: transform;
+}
+
+.notices-ticker-viewport:hover .notices-ticker-marquee,
+.notices-ticker-viewport:focus-within .notices-ticker-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notices-ticker-animated {
+    display: none !important;
+  }
+
+  .notices-ticker-static {
+    display: flex !important;
+  }
+
+  .notices-ticker-marquee {
+    animation: none;
+  }
+}

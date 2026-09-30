@@ -14,11 +14,11 @@ export default function HomePage() {
     <main id="main-content" className="flex-1">
       <HeroSection />
       <QuickAccessSection />
+      <NoticesSection />
       <ServicesSection />
       <WasteFeatureSection />
       <CollectionYardSection />
       <FuneralSection />
-      <NoticesSection />
       <PublicDocumentsSection />
       <EmploymentSection />
       <ContactCtaSection />
