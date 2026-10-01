@@ -40,7 +40,8 @@ function NoticeItems({ ariaHidden = false }: { ariaHidden?: boolean }) {
 export function NoticesSection() {
   return (
     <section
-      className="border-y border-line bg-surface"
+      id="oznamy"
+      className="scroll-mt-28 border-y border-line bg-surface"
       aria-labelledby="notices-heading"
     >
       <div className="flex min-h-[3.75rem] items-stretch md:min-h-[4.25rem]">

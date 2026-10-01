@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/ui/BrandLogo";
@@ -27,12 +26,12 @@ function DesktopDropdown({ item }: { item: NavItem }) {
 
   if (!item.children?.length) {
     return (
-      <Link
-        href={item.href}
+      <a
+        href={item.href ?? "#"}
         className="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-ink transition-colors hover:text-accent"
       >
         {item.label}
-      </Link>
+      </a>
     );
   }
 
@@ -64,7 +63,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       >
         {item.label}
         <ChevronDown
-          className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           aria-hidden
         />
       </button>
@@ -72,18 +71,18 @@ function DesktopDropdown({ item }: { item: NavItem }) {
         <div
           id={panelId}
           role="menu"
-          className="absolute left-0 top-full z-40 min-w-[16rem] rounded-lg border border-line bg-surface p-2 shadow-sm"
+          className="absolute left-0 top-full z-40 min-w-[17rem] rounded-lg border border-line bg-surface p-2 shadow-sm"
         >
           {item.children.map((child) => (
-            <Link
-              key={child.href}
-              href={child.href}
+            <button
+              key={child.label}
+              type="button"
               role="menuitem"
-              className="block rounded-md px-3 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-accent-soft hover:text-accent"
+              className="block w-full rounded-md px-3 py-2.5 text-left text-sm font-medium text-ink transition-colors hover:bg-accent-soft hover:text-accent focus-visible:bg-accent-soft focus-visible:text-accent"
               onClick={() => setOpen(false)}
             >
               {child.label}
-            </Link>
+            </button>
           ))}
         </div>
       ) : null}
@@ -93,7 +92,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const panelId = useId();
 
   useEffect(() => {
@@ -153,44 +152,50 @@ export function SiteHeader() {
             {NAV_ITEMS.map((item) => {
               if (!item.children?.length) {
                 return (
-                  <Link
+                  <a
                     key={item.label}
-                    href={item.href}
+                    href={item.href ?? "#"}
                     className="rounded-lg px-3 py-3 text-base font-semibold text-ink hover:bg-accent-soft"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 );
               }
+
+              const isOpen = openMobileGroup === item.label;
 
               return (
                 <div key={item.label} className="rounded-lg">
                   <button
                     type="button"
                     className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-base font-semibold text-ink hover:bg-accent-soft"
-                    aria-expanded={servicesOpen}
-                    onClick={() => setServicesOpen((value) => !value)}
+                    aria-expanded={isOpen}
+                    onClick={() =>
+                      setOpenMobileGroup((current) =>
+                        current === item.label ? null : item.label,
+                      )
+                    }
                   >
                     {item.label}
                     <ChevronDown
-                      className={`h-4 w-4 transition-transform ${
-                        servicesOpen ? "rotate-180" : ""
+                      className={`h-4 w-4 shrink-0 transition-transform duration-200 ${
+                        isOpen ? "rotate-180" : ""
                       }`}
                       aria-hidden
                     />
                   </button>
-                  {servicesOpen ? (
+                  {isOpen ? (
                     <div className="ml-2 flex flex-col border-l border-line pl-2">
                       {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="rounded-lg px-3 py-2.5 text-base font-medium text-muted hover:bg-accent-soft hover:text-ink"
+                        <button
+                          key={child.label}
+                          type="button"
+                          className="rounded-lg px-3 py-3 text-left text-base font-medium text-muted hover:bg-accent-soft hover:text-ink"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   ) : null}
