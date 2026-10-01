@@ -27,7 +27,7 @@ export function PublicDocumentsSection() {
         <SectionHeading
           id="docs-heading"
           title="Povinne zverejňované informácie"
-          description="Objednávky, faktúry, zmluvy a ďalšie povinne zverejňované dokumenty."
+          description="Objednávky, faktúry, zmluvy a povinné zverejňovanie."
         />
         <ul className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {DOCS.map((doc) => (

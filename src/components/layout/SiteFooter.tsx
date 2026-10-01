@@ -10,7 +10,8 @@ export function SiteFooter() {
         <div className="lg:pr-6">
           <BrandLogo variant="footer" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            Verejnoprospešné služby pre mesto Svit a jeho obyvateľov.
+            Poslaním TS Mesta Svit je zabezpečovať verejnoprospešné služby v
+            súlade so záujmami a potrebami mesta.
           </p>
         </div>
 

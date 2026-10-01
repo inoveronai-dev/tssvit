@@ -25,9 +25,6 @@ export function ContactForm() {
       <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[1.65rem]">
         Kontaktný formulár
       </h2>
-      <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted">
-        Napíšte nám a ozveme sa vám čo najskôr.
-      </p>
 
       <form
         className="mt-8 grid gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7"

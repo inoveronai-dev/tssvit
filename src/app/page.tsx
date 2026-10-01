@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/home/AboutSection";
 import { CollectionYardSection } from "@/components/home/CollectionYardSection";
 import { ContactCtaSection } from "@/components/home/ContactCtaSection";
 import { EmploymentSection } from "@/components/home/EmploymentSection";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HeroSection />
       <QuickAccessSection />
       <NoticesSection />
+      <AboutSection />
       <ServicesSection />
       <WasteFeatureSection />
       <CollectionYardSection />

@@ -22,7 +22,7 @@ export function EmploymentSection() {
                 Voľné pracovné miesta
               </h2>
               <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-                Aktuálne ponuky Technických služieb Mesta Svit.
+                Informácie o voľných pracovných miestach budú doplnené.
               </p>
               <Link
                 href={`${ROUTES.oNas}#pracovne-miesta`}
@@ -52,22 +52,31 @@ export function EmploymentSection() {
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
               Aktuálne ponuky
             </p>
-            <ul className="mt-4">
-              {JOBS.map((job) => (
-                <li key={job} className="border-b border-line-soft last:border-b-0">
-                  <Link
-                    href={`${ROUTES.oNas}#pracovne-miesta`}
-                    className="group flex min-h-[3.75rem] items-center justify-between gap-4 py-4 text-[1.05rem] font-semibold text-ink transition-colors hover:text-accent"
+            {JOBS.length > 0 ? (
+              <ul className="mt-4">
+                {JOBS.map((job) => (
+                  <li
+                    key={job}
+                    className="border-b border-line-soft last:border-b-0"
                   >
-                    {job}
-                    <ArrowRight
-                      className="link-arrow h-4 w-4 shrink-0 text-muted group-hover:text-accent"
-                      aria-hidden
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Link
+                      href={`${ROUTES.oNas}#pracovne-miesta`}
+                      className="group flex min-h-[3.75rem] items-center justify-between gap-4 py-4 text-[1.05rem] font-semibold text-ink transition-colors hover:text-accent"
+                    >
+                      {job}
+                      <ArrowRight
+                        className="link-arrow h-4 w-4 shrink-0 text-muted group-hover:text-accent"
+                        aria-hidden
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                Obsah sa pripravuje.
+              </p>
+            )}
           </div>
         </div>
       </div>

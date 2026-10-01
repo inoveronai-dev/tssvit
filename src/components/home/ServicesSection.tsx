@@ -2,38 +2,35 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SERVICE_SUMMARIES } from "@/lib/content/organization";
 import { IMAGES } from "@/lib/images";
 import { ROUTES } from "@/lib/routes";
 
 const SERVICES = [
   {
     title: "Verejná zeleň",
-    description:
-      "Údržba verejnej zelene, čistenie mesta, mestský mobiliár a starostlivosť o mestské lesy.",
+    description: SERVICE_SUMMARIES.verejnaZelen,
     href: ROUTES.verejnaZelen,
     image: IMAGES.verejnaZelen,
     objectPosition: "center 22%",
   },
   {
     title: "Odpadové hospodárstvo",
-    description:
-      "Zber komunálneho a separovaného odpadu, zberný dvor, biologický odpad a kompostáreň.",
+    description: SERVICE_SUMMARIES.odpadoveHospodarstvo,
     href: ROUTES.odpadoveHospodarstvo,
     image: IMAGES.odpadPrimary,
     objectPosition: "center 38%",
   },
   {
     title: "Verejné osvetlenie a technika",
-    description:
-      "Správa miestnych komunikácií, verejného osvetlenia, parkovísk a verejných priestranstiev.",
+    description: SERVICE_SUMMARIES.verejneOsvetlenie,
     href: ROUTES.verejneOsvetlenie,
     image: IMAGES.verejneOsvetlenie,
     objectPosition: "center 22%",
   },
   {
     title: "Pohrebné a cintorínske služby",
-    description:
-      "Pohrebné služby a komplexná starostlivosť spojená so správou mestského pohrebiska.",
+    description: SERVICE_SUMMARIES.pohrebneSluzby,
     href: ROUTES.pohrebneSluzby,
     image: IMAGES.pohrebneSluzby,
     objectPosition: "center 45%",
@@ -48,11 +45,7 @@ export function ServicesSection() {
       aria-labelledby="services-heading"
     >
       <div className="container-wide">
-        <SectionHeading
-          id="services-heading"
-          title="Naše služby"
-          description="Služby, ktoré Technické služby Mesta Svit zabezpečujú pre mesto a jeho obyvateľov."
-        />
+        <SectionHeading id="services-heading" title="Naše služby" />
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:gap-6">
           {SERVICES.map((service) => (

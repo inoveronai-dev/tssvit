@@ -17,8 +17,8 @@ export function FuneralSection() {
               Pohrebné a cintorínske služby
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/72 sm:text-lg">
-              Pomoc a služby spojené so zabezpečením pohrebu a správou mestského
-              pohrebiska.
+              Komplexná činnosť spojená s prevádzkovaním cintorína a
+              zabezpečovaním smútočných rozlúčok.
             </p>
             <div className="mt-9">
               <Link

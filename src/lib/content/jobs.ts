@@ -1,5 +1,2 @@
-export const JOBS = [
-  "Stavebný robotník",
-  "Elektrikár",
-  "Vodič, robotník",
-] as const;
+/** Job listings are not included in the current official source content. */
+export const JOBS: readonly string[] = [];

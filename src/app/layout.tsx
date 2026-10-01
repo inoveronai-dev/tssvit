@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Technické služby Mesta Svit",
   },
   description:
-    "Odpadové hospodárstvo, verejná zeleň, komunikácie, verejné osvetlenie a ďalšie služby pre obyvateľov mesta Svit.",
+    "Poslaním TS Mesta Svit je zabezpečovať verejnoprospešné služby v súlade so záujmami a potrebami mesta.",
 };
 
 export default function RootLayout({

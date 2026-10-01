@@ -36,7 +36,7 @@ export function WasteFeatureSection() {
           </div>
 
           <div className="flex flex-col justify-center py-1 lg:py-4">
-            <p className="section-eyebrow">Hlavná služba</p>
+            <p className="section-eyebrow">Odpadové hospodárstvo</p>
             <h2
               id="waste-heading"
               className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.65rem] md:leading-[1.12]"
@@ -44,7 +44,8 @@ export function WasteFeatureSection() {
               Odpadové hospodárstvo
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-muted">
-              Informácie o zbere odpadu, triedení, zbernom dvore a kompostárni.
+              Zber a triedenie separovaného odpadu, zber a odvoz TKO, zber a
+              spracovanie BRO a KBRO, prevádzka Zberného dvora a Kompostárne.
             </p>
 
             <ul className="mt-9 border-t border-line">
