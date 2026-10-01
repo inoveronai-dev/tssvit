@@ -193,3 +193,25 @@ body {
     animation: none;
   }
 }
+
+.about-activity-item {
+  opacity: 0;
+  transform: translate3d(0, 0.55rem, 0);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+  transition-delay: var(--about-delay, 0ms);
+}
+
+.about-activity-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-activity-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

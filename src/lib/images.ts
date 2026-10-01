@@ -7,6 +7,10 @@ export const IMAGES = {
     src: "/images/brand/logo-full.png",
     alt: "Technické služby Mesta Svit",
   },
+  svitCoatOfArms: {
+    src: "/images/brand/svit-coat-of-arms.png",
+    alt: "",
+  },
   heroSvit: {
     src: "/images/hero-svit.jpg",
     alt: "Letecký pohľad na mesto Svit v údolí pod Tatrami",
