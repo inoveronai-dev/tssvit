@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteUtilityBar } from "@/components/layout/SiteUtilityBar";
+import { SplashScreen } from "@/components/layout/SplashScreen";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="sk" className={`${dmSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
+        <SplashScreen />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2 focus:font-semibold focus:text-ink focus:shadow"

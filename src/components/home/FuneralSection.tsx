@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 import { PHONES, ROUTES } from "@/lib/routes";
 
 export function FuneralSection() {
@@ -9,7 +10,7 @@ export function FuneralSection() {
     >
       <div className="container-wide">
         <div className="grid gap-10 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:py-28">
-          <div className="max-w-xl">
+          <Reveal className="max-w-xl">
             <h2
               id="funeral-heading"
               className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:leading-[1.15]"
@@ -28,7 +29,7 @@ export function FuneralSection() {
                 Informácie o pohrebných službách
               </Link>
             </div>
-          </div>
+          </Reveal>
 
           <div className="border-t border-white/15 pt-8 md:border-l md:border-t-0 md:pl-12 md:pt-0 lg:pl-16">
             <p className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-white/55">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { Reveal } from "@/components/ui/Reveal";
 import { IMAGES } from "@/lib/images";
 import { ROUTES } from "@/lib/routes";
 
@@ -25,7 +26,7 @@ export function WasteFeatureSection() {
     >
       <div className="container-wide">
         <div className="grid items-stretch gap-10 lg:grid-cols-[1.35fr_1fr] lg:gap-16 xl:gap-20">
-          <div className="group relative min-h-[22rem]">
+          <Reveal className="group relative min-h-[22rem]">
             <SiteImage
               src={IMAGES.odpadFeature.src}
               alt={IMAGES.odpadFeature.alt}
@@ -33,20 +34,22 @@ export function WasteFeatureSection() {
               sizes="(max-width: 1024px) 100vw, 58vw"
               frameClassName="aspect-[4/5] w-full rounded-xl border border-line-soft sm:aspect-[5/4] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full lg:min-h-[34rem]"
             />
-          </div>
+          </Reveal>
 
           <div className="flex flex-col justify-center py-1 lg:py-4">
-            <p className="section-eyebrow">Odpadové hospodárstvo</p>
-            <h2
-              id="waste-heading"
-              className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.65rem] md:leading-[1.12]"
-            >
-              Odpadové hospodárstvo
-            </h2>
-            <p className="mt-5 max-w-md text-lg leading-relaxed text-muted">
-              Zber a triedenie separovaného odpadu, zber a odvoz TKO, zber a
-              spracovanie BRO a KBRO, prevádzka Zberného dvora a Kompostárne.
-            </p>
+            <Reveal>
+              <p className="section-eyebrow">Odpadové hospodárstvo</p>
+              <h2
+                id="waste-heading"
+                className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.65rem] md:leading-[1.12]"
+              >
+                Odpadové hospodárstvo
+              </h2>
+              <p className="mt-5 max-w-md text-lg leading-relaxed text-muted">
+                Zber a triedenie separovaného odpadu, zber a odvoz TKO, zber a
+                spracovanie BRO a KBRO, prevádzka Zberného dvora a Kompostárne.
+              </p>
+            </Reveal>
 
             <ul className="mt-9 border-t border-line">
               {LINKS.map((link) => (

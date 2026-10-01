@@ -144,11 +144,11 @@ body {
 }
 
 .img-zoom {
-  transition: transform 0.55s ease;
+  transition: transform 0.4s ease;
 }
 
 .group:hover .img-zoom {
-  transform: scale(1.035);
+  transform: scale(1.03);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -196,10 +196,10 @@ body {
 
 .about-activity-item {
   opacity: 0;
-  transform: translate3d(0, 0.55rem, 0);
+  transform: translate3d(0, 0.4rem, 0);
   transition:
-    opacity 0.55s ease,
-    transform 0.55s ease;
+    opacity 0.38s ease,
+    transform 0.38s ease;
   transition-delay: var(--about-delay, 0ms);
 }
 
@@ -213,5 +213,104 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 0.45rem, 0);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      165deg,
+      #f7f8f6 0%,
+      #f4f3ef 45%,
+      #eef1ee 100%
+    );
+  pointer-events: none;
+}
+
+.splash-screen__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.splash-screen__title {
+  margin-top: 1.35rem;
+  font-size: clamp(1.45rem, 2.6vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.splash-screen__subtitle {
+  margin-top: 0.85rem;
+  max-width: 18rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.splash-screen--enter .splash-screen__content {
+  animation: splash-enter 0.55s ease both;
+}
+
+.splash-screen--exit {
+  animation: splash-fade-out 0.45s ease both;
+}
+
+@keyframes splash-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.45rem, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes splash-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-screen--enter .splash-screen__content,
+  .splash-screen--exit {
+    animation: none;
   }
 }

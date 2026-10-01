@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Clock3, MapPin } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { Reveal } from "@/components/ui/Reveal";
 import { CONTACTS } from "@/lib/content/contacts";
 import { IMAGES } from "@/lib/images";
 import { ROUTES } from "@/lib/routes";
@@ -15,7 +16,7 @@ export function CollectionYardSection() {
     >
       <div className="container-wide">
         <div className="overflow-hidden rounded-xl border border-line-soft bg-surface shadow-[0_1px_0_rgba(26,31,28,0.03)] lg:grid lg:grid-cols-[1.15fr_0.95fr]">
-          <div className="group">
+          <Reveal className="group">
             <SiteImage
               src={IMAGES.zbernyDvor.src}
               alt={IMAGES.zbernyDvor.alt}
@@ -23,7 +24,7 @@ export function CollectionYardSection() {
               sizes="(max-width: 1024px) 100vw, 55vw"
               frameClassName="aspect-[16/11] w-full lg:aspect-auto lg:min-h-[26rem] xl:min-h-[28rem]"
             />
-          </div>
+          </Reveal>
 
           <div className="flex flex-col justify-center px-6 py-9 md:px-10 md:py-11 lg:px-12 lg:py-12">
             <p className="section-eyebrow">Praktické informácie</p>

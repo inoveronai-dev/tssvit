@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/kontakt/ContactForm";
+import { Reveal } from "@/components/ui/Reveal";
 import { CONTACTS } from "@/lib/content/contacts";
 import { ROUTES } from "@/lib/routes";
 
@@ -15,12 +16,14 @@ export function ContactCtaSection() {
       <div className="container-wide">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14 xl:gap-16">
           <div className="lg:pt-2">
-            <h2
-              id="contact-cta-heading"
-              className="text-3xl font-bold tracking-tight text-ink sm:text-[2.15rem] md:leading-tight"
-            >
-              Kontaktujte nás
-            </h2>
+            <Reveal>
+              <h2
+                id="contact-cta-heading"
+                className="text-3xl font-bold tracking-tight text-ink sm:text-[2.15rem] md:leading-tight"
+              >
+                Kontaktujte nás
+              </h2>
+            </Reveal>
 
             <div className="mt-8 space-y-6 border-t border-line pt-8">
               <div>

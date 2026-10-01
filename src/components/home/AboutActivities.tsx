@@ -52,7 +52,7 @@ export function AboutActivities() {
             <li
               key={activity.title}
               data-about-activity
-              style={{ "--about-delay": `${index * 55}ms` } as CSSProperties}
+              style={{ "--about-delay": `${index * 50}ms` } as CSSProperties}
               className="about-activity-item border-t border-line/80 first:border-t-0 sm:[&:nth-child(2)]:border-t-0"
             >
               <div className="group flex gap-4 rounded-lg px-2 py-5 transition-colors duration-200 hover:bg-surface/70 sm:gap-5 sm:px-3 sm:py-6">
