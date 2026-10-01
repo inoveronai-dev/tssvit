@@ -9,7 +9,7 @@ export function ContactCtaSection() {
 
   return (
     <section
-      id="kontakt"
+      id="kontakt-formular"
       className="scroll-mt-28 border-t border-line bg-paper-warm py-20 md:py-24"
       aria-labelledby="contact-cta-heading"
     >

@@ -5,7 +5,6 @@ import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { NAV_ITEMS, type NavItem } from "@/lib/navigation";
-import { ROUTES } from "@/lib/routes";
 
 function DesktopDropdown({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
@@ -119,12 +118,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href={ROUTES.nahlasitPodnet}
+          <a
+            href="/#kontakt-formular"
             className="btn-primary hidden sm:inline-flex"
           >
             Nahlásiť podnet
-          </Link>
+          </a>
           <button
             type="button"
             className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-line text-ink lg:hidden"
@@ -198,13 +197,13 @@ export function SiteHeader() {
                 </div>
               );
             })}
-            <Link
-              href={ROUTES.nahlasitPodnet}
+            <a
+              href="/#kontakt-formular"
               className="btn-primary mt-2 w-full"
               onClick={() => setMobileOpen(false)}
             >
               Nahlásiť podnet
-            </Link>
+            </a>
           </nav>
         </div>
       ) : null}
