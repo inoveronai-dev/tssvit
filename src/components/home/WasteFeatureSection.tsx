@@ -38,10 +38,9 @@ export function WasteFeatureSection() {
 
           <div className="flex flex-col justify-center py-1 lg:py-4">
             <Reveal>
-              <p className="section-eyebrow">Odpadové hospodárstvo</p>
               <h2
                 id="waste-heading"
-                className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.65rem] md:leading-[1.12]"
+                className="text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.65rem] md:leading-[1.12]"
               >
                 Odpadové hospodárstvo
               </h2>

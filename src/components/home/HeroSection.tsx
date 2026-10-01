@@ -24,8 +24,7 @@ export function HeroSection() {
           frameClassName="relative aspect-[16/10] w-full"
         />
         <div className="container-site py-8">
-          <p className="section-eyebrow">{ORGANIZATION.name}</p>
-          <h1 className="mt-3 max-w-[18ch] text-[2rem] font-bold leading-[1.15] tracking-tight text-ink">
+          <h1 className="max-w-[18ch] text-[2rem] font-bold leading-[1.15] tracking-tight text-ink">
             {ORGANIZATION.name}
           </h1>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted">
@@ -64,10 +63,7 @@ export function HeroSection() {
         />
         <div className="relative z-20 container-site flex min-h-[78vh] items-end pb-16 pt-28 lg:min-h-[82vh] lg:pb-20 lg:pt-32 xl:pb-24">
           <div className="max-w-[32rem] text-white lg:max-w-[36rem]">
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white/95 drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
-              {ORGANIZATION.name}
-            </p>
-            <h1 className="mt-7 max-w-[18ch] text-[2.65rem] font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_1px_12px_rgba(0,0,0,0.35)] lg:mt-8 lg:text-[3.15rem] lg:leading-[1.08] xl:text-[3.35rem]">
+            <h1 className="max-w-[18ch] text-[2.65rem] font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_1px_12px_rgba(0,0,0,0.35)] lg:text-[3.15rem] lg:leading-[1.08] xl:text-[3.35rem]">
               {ORGANIZATION.name}
             </h1>
             <p className="mt-7 max-w-[30rem] text-[1.08rem] leading-[1.75] text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)] lg:mt-8 lg:text-[1.125rem] lg:leading-[1.8]">

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_SUMMARIES } from "@/lib/content/organization";
 import { IMAGES } from "@/lib/images";
@@ -47,7 +46,13 @@ export function ServicesSection() {
     >
       <div className="container-wide">
         <Reveal>
-          <SectionHeading id="services-heading" title="Naše služby" />
+          <h2
+            id="services-heading"
+            className="text-4xl font-bold tracking-tight sm:text-5xl md:text-[3.15rem] md:leading-[1.08]"
+          >
+            <span className="text-ink">Naše</span>{" "}
+            <span className="text-accent">služby</span>
+          </h2>
         </Reveal>
 
         <ul className="mt-11 grid gap-5 sm:grid-cols-2 md:mt-12 lg:gap-6">

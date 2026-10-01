@@ -29,12 +29,12 @@ export function AboutSection() {
           <Reveal className="relative z-10">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:gap-16 xl:gap-20">
               <div className="max-w-md">
-                <p className="section-eyebrow">O organizácii</p>
                 <h2
                   id="about-heading"
-                  className="mt-4 max-w-[14ch] text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.65rem] md:leading-[1.12]"
+                  className="max-w-[12ch] text-4xl font-bold tracking-tight sm:text-5xl md:text-[3.35rem] md:leading-[1.08]"
                 >
-                  {ORGANIZATION.name}
+                  <span className="text-accent">O</span>{" "}
+                  <span className="text-ink">organizácii</span>
                 </h2>
                 <div className="mt-6 h-px w-14 bg-accent/35" aria-hidden />
               </div>
