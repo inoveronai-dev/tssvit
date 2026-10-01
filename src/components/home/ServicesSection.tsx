@@ -41,13 +41,13 @@ export function ServicesSection() {
   return (
     <section
       id="sluzby"
-      className="scroll-mt-28 bg-paper-warm py-16 md:py-20"
+      className="scroll-mt-28 bg-paper-warm py-20 md:py-24"
       aria-labelledby="services-heading"
     >
       <div className="container-wide">
         <SectionHeading id="services-heading" title="Naše služby" />
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:gap-6">
+        <ul className="mt-11 grid gap-5 sm:grid-cols-2 md:mt-12 lg:gap-6">
           {SERVICES.map((service) => (
             <li key={service.title}>
               <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-line-soft bg-surface">

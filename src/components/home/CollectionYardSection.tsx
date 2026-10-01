@@ -10,7 +10,7 @@ export function CollectionYardSection() {
 
   return (
     <section
-      className="bg-paper-warm py-16 md:py-20"
+      className="bg-paper-warm py-20 md:py-24"
       aria-labelledby="yard-heading"
     >
       <div className="container-wide">

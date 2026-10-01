@@ -1,14 +1,12 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { JOBS } from "@/lib/content/jobs";
 import { IMAGES } from "@/lib/images";
-import { ROUTES } from "@/lib/routes";
 
 export function EmploymentSection() {
   return (
     <section
-      className="bg-surface py-16 md:py-20"
+      className="bg-surface py-20 md:py-24"
       aria-labelledby="jobs-heading"
     >
       <div className="container-wide">
@@ -21,15 +19,6 @@ export function EmploymentSection() {
               >
                 Voľné pracovné miesta
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-                Informácie o voľných pracovných miestach budú doplnené.
-              </p>
-              <Link
-                href={`${ROUTES.oNas}#pracovne-miesta`}
-                className="btn-primary mt-8 min-h-12 px-6"
-              >
-                Zobraziť pracovné ponuky
-              </Link>
             </div>
 
             <div
@@ -49,34 +38,27 @@ export function EmploymentSection() {
           </div>
 
           <div className="border-t border-line-soft bg-surface px-6 py-6 sm:px-8 sm:py-8 lg:border-l lg:border-t-0 lg:px-10 lg:py-10">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">
-              Aktuálne ponuky
-            </p>
-            {JOBS.length > 0 ? (
-              <ul className="mt-4">
-                {JOBS.map((job) => (
-                  <li
-                    key={job}
-                    className="border-b border-line-soft last:border-b-0"
+            <ul>
+              {JOBS.map((job) => (
+                <li
+                  key={job.title}
+                  className="border-b border-line-soft last:border-b-0"
+                >
+                  <a
+                    href={job.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex min-h-[3.75rem] items-center justify-between gap-4 py-4 text-[1.05rem] font-semibold text-ink transition-colors hover:text-accent"
                   >
-                    <Link
-                      href={`${ROUTES.oNas}#pracovne-miesta`}
-                      className="group flex min-h-[3.75rem] items-center justify-between gap-4 py-4 text-[1.05rem] font-semibold text-ink transition-colors hover:text-accent"
-                    >
-                      {job}
-                      <ArrowRight
-                        className="link-arrow h-4 w-4 shrink-0 text-muted group-hover:text-accent"
-                        aria-hidden
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-4 text-base leading-relaxed text-muted">
-                Obsah sa pripravuje.
-              </p>
-            )}
+                    {job.title}
+                    <ArrowRight
+                      className="link-arrow h-4 w-4 shrink-0 text-muted group-hover:text-accent"
+                      aria-hidden
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

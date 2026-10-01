@@ -20,7 +20,7 @@ const DOCS = [
 export function PublicDocumentsSection() {
   return (
     <section
-      className="bg-quiet py-16 md:py-20"
+      className="bg-quiet py-20 md:py-24"
       aria-labelledby="docs-heading"
     >
       <div className="container-site">
@@ -29,7 +29,7 @@ export function PublicDocumentsSection() {
           title="Povinne zverejňované informácie"
           description="Objednávky, faktúry, zmluvy a povinné zverejňovanie."
         />
-        <ul className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-3 sm:grid-cols-2 md:mt-11 lg:grid-cols-3">
           {DOCS.map((doc) => (
             <li key={doc.href}>
               <Link

@@ -48,18 +48,21 @@ export default function ONasPage() {
           className="scroll-mt-28 rounded-lg border border-line bg-surface p-6 md:p-8"
         >
           <h2 className="text-xl font-bold text-ink">Voľné pracovné miesta</h2>
-          {JOBS.length > 0 ? (
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-ink">
-              {JOBS.map((job) => (
-                <li key={job}>{job}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="mt-4 text-muted">
-              Informácie o voľných pracovných miestach budú doplnené. Obsah sa
-              pripravuje.
-            </p>
-          )}
+          <ul className="mt-4">
+            {JOBS.map((job) => (
+              <li key={job.title} className="border-b border-line-soft last:border-b-0">
+                <a
+                  href={job.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-12 items-center justify-between gap-4 py-3 font-semibold text-ink hover:text-accent"
+                >
+                  {job.title}
+                  <span aria-hidden>→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
     </SubpageShell>

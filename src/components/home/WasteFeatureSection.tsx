@@ -20,7 +20,7 @@ const LINKS = [
 export function WasteFeatureSection() {
   return (
     <section
-      className="bg-surface py-16 md:py-24"
+      className="bg-surface py-20 md:py-28"
       aria-labelledby="waste-heading"
     >
       <div className="container-wide">

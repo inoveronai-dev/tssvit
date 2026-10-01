@@ -1,50 +1,62 @@
 import Link from "next/link";
-import { PHONES, ROUTES } from "@/lib/routes";
+import { ContactForm } from "@/components/kontakt/ContactForm";
+import { CONTACTS } from "@/lib/content/contacts";
+import { ROUTES } from "@/lib/routes";
 
 export function ContactCtaSection() {
+  const { firstContact } = CONTACTS;
+
   return (
     <section
-      className="bg-accent text-white"
+      id="kontakt"
+      className="scroll-mt-28 border-t border-line bg-paper-warm py-20 md:py-24"
       aria-labelledby="contact-cta-heading"
     >
-      <div className="container-site py-16 md:py-20">
-        <div className="max-w-3xl">
-          <p className="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-white/70">
-            Prvý kontakt
-          </p>
-          <h2
-            id="contact-cta-heading"
-            className="mt-3 text-2xl font-bold tracking-tight text-white/95 sm:text-3xl"
-          >
-            Potrebujete niečo vybaviť?
-          </h2>
-          <a
-            href={PHONES.main.href}
-            className="mt-7 inline-block text-5xl font-bold tracking-tight text-white transition-opacity hover:opacity-90 sm:text-6xl sm:leading-none"
-          >
-            {PHONES.main.label}
-          </a>
-
-          <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            <Link
-              href={`${ROUTES.kontakt}#formular`}
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-7 text-base font-semibold text-accent transition-colors hover:bg-accent-soft"
+      <div className="container-wide">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14 xl:gap-16">
+          <div className="lg:pt-2">
+            <h2
+              id="contact-cta-heading"
+              className="text-3xl font-bold tracking-tight text-ink sm:text-[2.15rem] md:leading-tight"
             >
-              Kontaktný formulár
-            </Link>
+              Kontaktujte nás
+            </h2>
+
+            <div className="mt-8 space-y-6 border-t border-line pt-8">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted">
+                  Prvý kontakt
+                </p>
+                <a
+                  href={firstContact.phone.href}
+                  className="mt-2 block text-4xl font-bold tracking-tight text-ink transition-colors hover:text-accent sm:text-5xl sm:leading-none"
+                >
+                  {firstContact.phone.label}
+                </a>
+              </div>
+
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted">
+                  E-mail
+                </p>
+                <a
+                  href={`mailto:${firstContact.email}`}
+                  className="mt-2 inline-block text-lg font-semibold text-ink transition-colors hover:text-accent"
+                >
+                  {firstContact.email}
+                </a>
+              </div>
+            </div>
+
             <Link
               href={ROUTES.kontakt}
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/35 px-6 text-base font-semibold text-white/95 transition-colors hover:border-white/60 hover:bg-white/10"
+              className="mt-10 inline-flex min-h-11 items-center text-base font-semibold text-accent transition-colors hover:text-accent-hover"
             >
-              Kontakty
-            </Link>
-            <Link
-              href={ROUTES.nahlasitPodnet}
-              className="inline-flex min-h-12 items-center justify-center px-2 text-base font-semibold text-white/85 underline-offset-4 transition-colors hover:text-white hover:underline"
-            >
-              Nahlásiť podnet
+              Všetky kontakty
             </Link>
           </div>
+
+          <ContactForm showHeading={false} />
         </div>
       </div>
     </section>

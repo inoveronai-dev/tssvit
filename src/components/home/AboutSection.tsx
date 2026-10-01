@@ -4,7 +4,7 @@ export function AboutSection() {
   return (
     <section
       id="o-organizacii"
-      className="scroll-mt-28 bg-surface py-16 md:py-20"
+      className="scroll-mt-28 bg-surface py-20 md:py-24"
       aria-labelledby="about-heading"
     >
       <div className="container-wide">
@@ -26,36 +26,54 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-line pt-10 md:mt-14 md:pt-12">
+        <div className="mt-14 border-t border-line pt-12 md:mt-16 md:pt-14">
           <p className="text-sm font-bold uppercase tracking-[0.12em] text-muted">
             Základné činnosti
           </p>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {ORGANIZATION.coreActivities.map((activity) => (
-              <li
-                key={activity.title}
-                className="rounded-xl border border-line-soft bg-paper-warm/60 p-5"
-              >
-                <p className="text-base font-semibold leading-snug text-ink">
-                  {activity.title}
-                </p>
-                {"detail" in activity && activity.detail ? (
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {activity.detail}
-                  </p>
-                ) : null}
-                {"items" in activity && activity.items ? (
-                  <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted">
-                    {activity.items.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </li>
-            ))}
+
+          <ul className="mt-9 grid sm:grid-cols-2 sm:gap-x-14 md:mt-10">
+            {ORGANIZATION.coreActivities.map((activity, index) => {
+              const number = String(index + 1).padStart(2, "0");
+
+              return (
+                <li
+                  key={activity.title}
+                  className="border-t border-line py-6 first:border-t-0 first:pt-0 sm:[&:nth-child(2)]:border-t-0 sm:[&:nth-child(2)]:pt-0"
+                >
+                  <div className="flex gap-4 sm:gap-5">
+                    <span
+                      className="mt-0.5 shrink-0 font-mono text-[0.8rem] font-semibold tabular-nums tracking-wide text-accent/80"
+                      aria-hidden
+                    >
+                      {number}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-lg font-semibold leading-snug tracking-tight text-ink">
+                        {activity.title}
+                      </p>
+                      {"detail" in activity && activity.detail ? (
+                        <p className="mt-2 max-w-md text-sm leading-relaxed text-muted sm:text-[0.95rem]">
+                          {activity.detail}
+                        </p>
+                      ) : null}
+                      {"items" in activity && activity.items ? (
+                        <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted">
+                          {activity.items.map((item) => (
+                            <li key={item} className="flex gap-2.5">
+                              <span
+                                className="mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-muted/50"
+                                aria-hidden
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

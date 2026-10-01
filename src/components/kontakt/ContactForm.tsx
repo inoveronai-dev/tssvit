@@ -7,7 +7,15 @@ const inputClassName =
 
 const labelClassName = "mb-2 block text-sm font-semibold text-ink";
 
-export function ContactForm() {
+type ContactFormProps = {
+  showHeading?: boolean;
+  className?: string;
+};
+
+export function ContactForm({
+  showHeading = true,
+  className = "",
+}: ContactFormProps) {
   const formId = useId();
   const statusId = `${formId}-status`;
   const [submitted, setSubmitted] = useState(false);
@@ -20,14 +28,16 @@ export function ContactForm() {
   return (
     <div
       id="formular"
-      className="scroll-mt-28 rounded-lg border border-line bg-surface p-6 md:p-8 lg:p-10"
+      className={`scroll-mt-28 rounded-lg border border-line bg-surface p-6 md:p-8 lg:p-10 ${className}`.trim()}
     >
-      <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[1.65rem]">
-        Kontaktný formulár
-      </h2>
+      {showHeading ? (
+        <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[1.65rem]">
+          Kontaktný formulár
+        </h2>
+      ) : null}
 
       <form
-        className="mt-8 grid gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7"
+        className={`grid gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7 ${showHeading ? "mt-8" : ""}`}
         onSubmit={handleSubmit}
         aria-describedby={submitted ? statusId : undefined}
       >
@@ -138,8 +148,8 @@ export function ContactForm() {
             Odoslať správu
           </button>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-            Odoslanie formulára cez web zatiaľ nie je pripojené na server.
-            Po stlačení tlačidla sa správa neodosiela — odosielanie doplníme v
+            Odoslanie formulára cez web zatiaľ nie je pripojené na server. Po
+            stlačení tlačidla sa správa neodosiela — odosielanie doplníme v
             ďalšom kroku. Medzitým nás môžete kontaktovať telefonicky.
           </p>
         </div>
@@ -152,8 +162,8 @@ export function ContactForm() {
           className="mt-6 rounded-lg border border-line bg-accent-soft/80 px-4 py-3 text-sm leading-relaxed text-ink"
         >
           Formulár je pripravený, ale odoslanie zatiaľ nie je aktivované.
-          Skontrolujte prosím údaje a kontaktujte nás telefonicky, ak potrebujete
-          odpoveď ihneď.
+          Skontrolujte prosím údaje a kontaktujte nás telefonicky, ak
+          potrebujete odpoveď ihneď.
         </p>
       ) : null}
     </div>

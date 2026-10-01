@@ -41,7 +41,7 @@ export function NoticesSection() {
       className="border-y border-line bg-surface"
       aria-labelledby="notices-heading"
     >
-      <div className="flex min-h-12 items-stretch md:min-h-14">
+      <div className="flex min-h-[3.25rem] items-stretch md:min-h-[3.75rem]">
         <div className="flex shrink-0 items-center border-r border-line bg-surface px-4 sm:px-5 md:px-6">
           <p
             id="notices-heading"

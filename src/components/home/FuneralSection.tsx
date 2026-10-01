@@ -8,7 +8,7 @@ export function FuneralSection() {
       aria-labelledby="funeral-heading"
     >
       <div className="container-wide">
-        <div className="grid gap-10 py-16 md:grid-cols-[1.15fr_0.85fr] md:items-center md:gap-14 md:py-20 lg:gap-20 lg:py-24">
+        <div className="grid gap-10 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:py-28">
           <div className="max-w-xl">
             <h2
               id="funeral-heading"

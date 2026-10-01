@@ -46,12 +46,12 @@ const ACTIONS = [
 export function QuickAccessSection() {
   return (
     <section
-      className="bg-surface py-10 md:py-12"
+      className="bg-surface py-12 md:py-16"
       aria-labelledby="quick-access"
     >
       <div className="container-site">
         <SectionHeading id="quick-access" title="Čo potrebujete vybaviť?" />
-        <ul className="mt-7 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid gap-3.5 sm:grid-cols-2 md:mt-9 lg:grid-cols-3">
           {ACTIONS.map((action) => {
             const Icon = action.icon;
             return (
