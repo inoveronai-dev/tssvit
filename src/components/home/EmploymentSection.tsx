@@ -7,7 +7,8 @@ import { IMAGES } from "@/lib/images";
 export function EmploymentSection() {
   return (
     <section
-      className="bg-surface py-20 md:py-24"
+      id="pracovne-miesta"
+      className="scroll-mt-28 bg-surface py-20 md:py-24"
       aria-labelledby="jobs-heading"
     >
       <div className="container-wide">

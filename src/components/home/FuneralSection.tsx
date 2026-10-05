@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-import { PHONES, ROUTES } from "@/lib/routes";
+import { PHONES } from "@/lib/routes";
 
 export function FuneralSection() {
   return (
     <section
-      className="bg-funeral text-[#f3f4f2]"
+      id="pohrebne-sluzby"
+      className="scroll-mt-28 bg-funeral text-[#f3f4f2]"
       aria-labelledby="funeral-heading"
     >
       <div className="container-wide">
@@ -22,12 +22,12 @@ export function FuneralSection() {
               zabezpečovaním smútočných rozlúčok.
             </p>
             <div className="mt-9">
-              <Link
-                href={ROUTES.pohrebneSluzby}
-                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/25 bg-white/5 px-6 text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/10"
+              <button
+                type="button"
+                className="inline-flex min-h-12 cursor-default items-center justify-center rounded-lg border border-white/25 bg-white/5 px-6 text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/10"
               >
                 Informácie o pohrebných službách
-              </Link>
+              </button>
             </div>
           </Reveal>
 

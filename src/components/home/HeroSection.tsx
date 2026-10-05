@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { ORGANIZATION } from "@/lib/content/organization";
 import { IMAGES } from "@/lib/images";
-import { ROUTES } from "@/lib/routes";
+import { HOME_SECTIONS } from "@/lib/routes";
 
 /** Prefer full-viewport / retina widths up to the 4K source */
 const HERO_SIZES =
@@ -31,11 +31,11 @@ export function HeroSection() {
             {ORGANIZATION.missionShort}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/#sluzby" className="min-h-12 px-6">
+            <ButtonLink href={HOME_SECTIONS.services} className="min-h-12 px-6">
               Naše služby
             </ButtonLink>
             <ButtonLink
-              href={ROUTES.kontakt}
+              href={HOME_SECTIONS.contact}
               variant="secondary"
               className="min-h-12 px-6"
             >
@@ -71,13 +71,13 @@ export function HeroSection() {
             </p>
             <div className="mt-11 flex flex-wrap gap-4 lg:mt-12">
               <ButtonLink
-                href="/#sluzby"
+                href={HOME_SECTIONS.services}
                 className="min-h-[3.25rem] px-8 text-[1.0625rem] tracking-wide"
               >
                 Naše služby
               </ButtonLink>
               <a
-                href={ROUTES.kontakt}
+                href={HOME_SECTIONS.contact}
                 className="inline-flex min-h-[3.25rem] items-center justify-center rounded-lg border-2 border-white/90 bg-white/16 px-8 text-[1.0625rem] font-semibold tracking-wide text-white shadow-[0_1px_10px_rgba(0,0,0,0.22)] transition-colors hover:border-white hover:bg-white/28"
               >
                 Kontakt

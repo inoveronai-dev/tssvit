@@ -1,17 +1,16 @@
-import Link from "next/link";
 import { Clock3, MapPin } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { CONTACTS } from "@/lib/content/contacts";
 import { IMAGES } from "@/lib/images";
-import { ROUTES } from "@/lib/routes";
 
 export function CollectionYardSection() {
   const yard = CONTACTS.collectionYard;
 
   return (
     <section
-      className="bg-paper-warm py-20 md:py-24"
+      id="zberny-dvor"
+      className="scroll-mt-28 bg-paper-warm py-20 md:py-24"
       aria-labelledby="yard-heading"
     >
       <div className="container-wide">
@@ -69,18 +68,15 @@ export function CollectionYardSection() {
             </div>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-              <Link
-                href={`${ROUTES.odpadoveHospodarstvo}#zberny-dvor`}
-                className="btn-primary min-h-12 px-6"
-              >
+              <button type="button" className="btn-primary min-h-12 cursor-default px-6">
                 Čo môžem odovzdať
-              </Link>
-              <Link
-                href={`${ROUTES.odpadoveHospodarstvo}#zberny-dvor`}
-                className="inline-flex min-h-11 items-center justify-center px-1 text-base font-semibold text-muted transition-colors hover:text-accent"
+              </button>
+              <button
+                type="button"
+                className="inline-flex min-h-11 cursor-default items-center justify-center px-1 text-base font-semibold text-muted transition-colors hover:text-accent"
               >
                 Viac informácií
-              </Link>
+              </button>
             </div>
           </div>
         </div>

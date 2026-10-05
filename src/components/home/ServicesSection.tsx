@@ -4,34 +4,34 @@ import { SiteImage } from "@/components/ui/SiteImage";
 import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_SUMMARIES } from "@/lib/content/organization";
 import { IMAGES } from "@/lib/images";
-import { ROUTES } from "@/lib/routes";
+import { HOME_SECTIONS } from "@/lib/routes";
 
 const SERVICES = [
   {
     title: "Verejná zeleň",
     description: SERVICE_SUMMARIES.verejnaZelen,
-    href: ROUTES.verejnaZelen,
+    href: HOME_SECTIONS.services,
     image: IMAGES.verejnaZelen,
     objectPosition: "center 22%",
   },
   {
     title: "Odpadové hospodárstvo",
     description: SERVICE_SUMMARIES.odpadoveHospodarstvo,
-    href: ROUTES.odpadoveHospodarstvo,
+    href: HOME_SECTIONS.waste,
     image: IMAGES.odpadPrimary,
     objectPosition: "center 38%",
   },
   {
     title: "Verejné osvetlenie a technika",
     description: SERVICE_SUMMARIES.verejneOsvetlenie,
-    href: ROUTES.verejneOsvetlenie,
+    href: HOME_SECTIONS.services,
     image: IMAGES.verejneOsvetlenie,
     objectPosition: "center 22%",
   },
   {
     title: "Pohrebné a cintorínske služby",
     description: SERVICE_SUMMARIES.pohrebneSluzby,
-    href: ROUTES.pohrebneSluzby,
+    href: HOME_SECTIONS.funeral,
     image: IMAGES.pohrebneSluzby,
     objectPosition: "center 45%",
   },

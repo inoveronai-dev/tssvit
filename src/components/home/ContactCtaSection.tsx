@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { ContactForm } from "@/components/kontakt/ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { CONTACTS } from "@/lib/content/contacts";
-import { ROUTES } from "@/lib/routes";
 
 export function ContactCtaSection() {
   const { firstContact } = CONTACTS;
@@ -51,12 +49,12 @@ export function ContactCtaSection() {
               </div>
             </div>
 
-            <Link
-              href={ROUTES.kontakt}
-              className="mt-10 inline-flex min-h-11 items-center text-base font-semibold text-accent transition-colors hover:text-accent-hover"
+            <button
+              type="button"
+              className="mt-10 inline-flex min-h-11 cursor-default items-center text-base font-semibold text-accent transition-colors hover:text-accent-hover"
             >
               Všetky kontakty
-            </Link>
+            </button>
           </div>
 
           <ContactForm showHeading={false} />

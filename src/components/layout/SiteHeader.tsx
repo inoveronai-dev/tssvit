@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { NAV_ITEMS, type NavItem } from "@/lib/navigation";
+import { HOME_SECTIONS } from "@/lib/routes";
 
 function DesktopDropdown({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
@@ -73,17 +74,29 @@ function DesktopDropdown({ item }: { item: NavItem }) {
           role="menu"
           className="absolute left-0 top-full z-40 min-w-[17rem] rounded-lg border border-line bg-surface p-2 shadow-sm"
         >
-          {item.children.map((child) => (
-            <button
-              key={child.label}
-              type="button"
-              role="menuitem"
-              className="block w-full rounded-md px-3 py-2.5 text-left text-sm font-medium text-ink transition-colors hover:bg-accent-soft hover:text-accent focus-visible:bg-accent-soft focus-visible:text-accent"
-              onClick={() => setOpen(false)}
-            >
-              {child.label}
-            </button>
-          ))}
+          {item.children.map((child) =>
+            child.href ? (
+              <a
+                key={child.label}
+                href={child.href}
+                role="menuitem"
+                className="block w-full rounded-md px-3 py-2.5 text-left text-sm font-medium text-ink transition-colors hover:bg-accent-soft hover:text-accent focus-visible:bg-accent-soft focus-visible:text-accent"
+                onClick={() => setOpen(false)}
+              >
+                {child.label}
+              </a>
+            ) : (
+              <button
+                key={child.label}
+                type="button"
+                role="menuitem"
+                className="block w-full rounded-md px-3 py-2.5 text-left text-sm font-medium text-ink transition-colors hover:bg-accent-soft hover:text-accent focus-visible:bg-accent-soft focus-visible:text-accent"
+                onClick={() => setOpen(false)}
+              >
+                {child.label}
+              </button>
+            ),
+          )}
         </div>
       ) : null}
     </div>
@@ -118,7 +131,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <a
-            href="/#kontakt-formular"
+            href={HOME_SECTIONS.contact}
             className="btn-primary hidden sm:inline-flex"
           >
             Nahlásiť podnet
@@ -187,23 +200,34 @@ export function SiteHeader() {
                   </button>
                   {isOpen ? (
                     <div className="ml-2 flex flex-col border-l border-line pl-2">
-                      {item.children.map((child) => (
-                        <button
-                          key={child.label}
-                          type="button"
-                          className="rounded-lg px-3 py-3 text-left text-base font-medium text-muted hover:bg-accent-soft hover:text-ink"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {child.label}
-                        </button>
-                      ))}
+                      {item.children.map((child) =>
+                        child.href ? (
+                          <a
+                            key={child.label}
+                            href={child.href}
+                            className="rounded-lg px-3 py-3 text-left text-base font-medium text-muted hover:bg-accent-soft hover:text-ink"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </a>
+                        ) : (
+                          <button
+                            key={child.label}
+                            type="button"
+                            className="rounded-lg px-3 py-3 text-left text-base font-medium text-muted hover:bg-accent-soft hover:text-ink"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </button>
+                        ),
+                      )}
                     </div>
                   ) : null}
                 </div>
               );
             })}
             <a
-              href="/#kontakt-formular"
+              href={HOME_SECTIONS.contact}
               className="btn-primary mt-2 w-full"
               onClick={() => setMobileOpen(false)}
             >

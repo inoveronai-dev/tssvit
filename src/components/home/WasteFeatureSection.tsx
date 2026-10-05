@@ -2,26 +2,26 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { SEPARATED_WASTE_CALENDAR_2026 } from "@/lib/content/organization";
 import { IMAGES } from "@/lib/images";
-import { ROUTES } from "@/lib/routes";
+import { HOME_SECTIONS } from "@/lib/routes";
 
 const LINKS = [
-  { label: "Kalendár zberu", href: `${ROUTES.odpadoveHospodarstvo}#kalendar` },
-  { label: "Zberný dvor", href: `${ROUTES.odpadoveHospodarstvo}#zberny-dvor` },
   {
-    label: "Kompostáreň",
-    href: `${ROUTES.odpadoveHospodarstvo}#kompostaren`,
+    label: "Kalendár zberu",
+    href: SEPARATED_WASTE_CALENDAR_2026,
+    external: true,
   },
-  {
-    label: "Ako triediť odpad",
-    href: `${ROUTES.odpadoveHospodarstvo}#triedenie`,
-  },
+  { label: "Zberný dvor", href: HOME_SECTIONS.collectionYard },
+  { label: "Kompostáreň", href: HOME_SECTIONS.waste },
+  { label: "Ako triediť odpad", href: HOME_SECTIONS.waste },
 ] as const;
 
 export function WasteFeatureSection() {
   return (
     <section
-      className="bg-surface py-20 md:py-28"
+      id="odpadove-hospodarstvo"
+      className="scroll-mt-28 bg-surface py-20 md:py-28"
       aria-labelledby="waste-heading"
     >
       <div className="container-wide">
@@ -52,9 +52,15 @@ export function WasteFeatureSection() {
 
             <ul className="mt-9 border-t border-line">
               {LINKS.map((link) => (
-                <li key={link.href} className="border-b border-line">
+                <li key={link.label} className="border-b border-line">
                   <Link
                     href={link.href}
+                    {...("external" in link && link.external
+                      ? {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        }
+                      : {})}
                     className="group flex min-h-[3.5rem] items-center justify-between gap-4 py-4 text-[1.05rem] font-semibold text-ink transition-colors hover:text-accent"
                   >
                     {link.label}
@@ -67,13 +73,13 @@ export function WasteFeatureSection() {
               ))}
             </ul>
 
-            <Link
-              href={ROUTES.odpadoveHospodarstvo}
-              className="mt-8 inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-accent transition-colors hover:text-accent-hover"
+            <button
+              type="button"
+              className="mt-8 inline-flex min-h-11 w-fit cursor-default items-center gap-2 text-base font-semibold text-accent transition-colors hover:text-accent-hover"
             >
               Všetky informácie o odpadoch
               <ArrowRight className="link-arrow h-4 w-4" aria-hidden />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

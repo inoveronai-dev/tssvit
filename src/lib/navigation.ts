@@ -1,4 +1,4 @@
-import { ROUTES } from "./routes";
+import { HOME_SECTIONS } from "./routes";
 
 export type NavChild = {
   label: string;
@@ -22,45 +22,51 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Služby",
     children: [
-      { label: "Verejná zeleň" },
-      { label: "Odpadové hospodárstvo" },
-      { label: "Verejné osvetlenie a technika" },
-      { label: "Pohrebné a cintorínske služby" },
+      { label: "Verejná zeleň", href: HOME_SECTIONS.services },
+      { label: "Odpadové hospodárstvo", href: HOME_SECTIONS.waste },
+      {
+        label: "Verejné osvetlenie a technika",
+        href: HOME_SECTIONS.services,
+      },
+      {
+        label: "Pohrebné a cintorínske služby",
+        href: HOME_SECTIONS.funeral,
+      },
     ],
   },
   {
     label: "Povinne zverejňované informácie",
     children: [
-      { label: "Objednávky" },
-      { label: "Faktúry" },
-      { label: "Zmluvy" },
-      { label: "Odpadové hospodárstvo" },
-      { label: "Autobusová stanica" },
+      { label: "Objednávky", href: HOME_SECTIONS.documents },
+      { label: "Faktúry", href: HOME_SECTIONS.documents },
+      { label: "Zmluvy", href: HOME_SECTIONS.documents },
+      { label: "Odpadové hospodárstvo", href: HOME_SECTIONS.documents },
+      { label: "Autobusová stanica", href: HOME_SECTIONS.documents },
     ],
   },
-  { label: "Oznamy", href: "/#oznamy" },
-  { label: "Kontakt", href: "/#kontakt-formular" },
+  { label: "Oznamy", href: HOME_SECTIONS.notices },
+  { label: "Kontakt", href: HOME_SECTIONS.contact },
 ];
 
 export const FOOTER_SERVICES: FooterLink[] = [
-  { label: "Verejná zeleň", href: ROUTES.verejnaZelen },
-  { label: "Odpadové hospodárstvo", href: ROUTES.odpadoveHospodarstvo },
+  { label: "Verejná zeleň", href: HOME_SECTIONS.services },
+  { label: "Odpadové hospodárstvo", href: HOME_SECTIONS.waste },
   {
     label: "Verejné osvetlenie a technika",
-    href: ROUTES.verejneOsvetlenie,
+    href: HOME_SECTIONS.services,
   },
   {
     label: "Pohrebné a cintorínske služby",
-    href: ROUTES.pohrebneSluzby,
+    href: HOME_SECTIONS.funeral,
   },
 ];
 
 export const FOOTER_INFO: FooterLink[] = [
-  { label: "Oznamy", href: ROUTES.oznamy },
+  { label: "Oznamy", href: HOME_SECTIONS.notices },
   {
     label: "Objednávky",
-    href: `${ROUTES.povinneZverejnovanie}#objednavky`,
+    href: HOME_SECTIONS.documents,
   },
-  { label: "Faktúry", href: `${ROUTES.povinneZverejnovanie}#faktury` },
-  { label: "Zmluvy", href: `${ROUTES.povinneZverejnovanie}#zmluvy` },
+  { label: "Faktúry", href: HOME_SECTIONS.documents },
+  { label: "Zmluvy", href: HOME_SECTIONS.documents },
 ];

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { FOOTER_INFO, FOOTER_SERVICES } from "@/lib/navigation";
-import { PHONES, ROUTES } from "@/lib/routes";
+import { HOME_SECTIONS, PHONES } from "@/lib/routes";
 
 export function SiteFooter() {
   return (
@@ -78,7 +78,7 @@ export function SiteFooter() {
             </li>
             <li className="pt-1">
               <Link
-                href={ROUTES.kontakt}
+                href={HOME_SECTIONS.contact}
                 className="text-white/75 transition-colors hover:text-white"
               >
                 Kontaktná stránka
@@ -86,7 +86,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link
-                href={ROUTES.nahlasitPodnet}
+                href={HOME_SECTIONS.contact}
                 className="text-white/75 transition-colors hover:text-white"
               >
                 Nahlásiť podnet
