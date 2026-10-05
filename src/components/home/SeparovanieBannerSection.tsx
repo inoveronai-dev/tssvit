@@ -4,21 +4,24 @@ import { IMAGES } from "@/lib/images";
 
 export function SeparovanieBannerSection() {
   return (
-    <section
-      className="relative isolate overflow-hidden"
-      aria-label="Separovanie odpadu"
-    >
-      <div className="absolute inset-0">
+    <section className="relative" aria-label="Separovanie odpadu">
+      {/* Mobile / reduced-motion: static optimized image */}
+      <div className="absolute inset-0 md:hidden" aria-hidden>
         <Image
           src={IMAGES.separovanieBanner.src}
           alt=""
           fill
           sizes="100vw"
           quality={85}
-          className="object-cover object-center md:scale-[1.02]"
-          aria-hidden
+          className="object-cover object-center"
         />
       </div>
+
+      {/* Desktop: fixed-background parallax */}
+      <div
+        className="separovanie-banner-bg absolute inset-0 hidden md:block"
+        aria-hidden
+      />
 
       <div
         className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,14,0.52)_0%,rgba(12,18,14,0.58)_50%,rgba(12,18,14,0.62)_100%)]"
