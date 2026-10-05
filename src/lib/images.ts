@@ -43,4 +43,8 @@ export const IMAGES = {
     src: "/images/pohrebne-sluzby.jpg",
     alt: "Mestský cintorín v Svite",
   },
+  separovanieBanner: {
+    src: "/images/separovanie-banner.jpg",
+    alt: "Kontajnery na separovaný zber v zelenom prostredí",
+  },
 } as const;

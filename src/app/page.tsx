@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { NoticesSection } from "@/components/home/NoticesSection";
 import { PublicDocumentsSection } from "@/components/home/PublicDocumentsSection";
 import { QuickAccessSection } from "@/components/home/QuickAccessSection";
+import { SeparovanieBannerSection } from "@/components/home/SeparovanieBannerSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { WasteFeatureSection } from "@/components/home/WasteFeatureSection";
 
@@ -18,6 +19,7 @@ export default function HomePage() {
       <NoticesSection />
       <AboutSection />
       <ServicesSection />
+      <SeparovanieBannerSection />
       <WasteFeatureSection />
       <CollectionYardSection />
       <FuneralSection />
